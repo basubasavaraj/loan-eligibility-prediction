@@ -3,8 +3,10 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 
 # Load dataset
-data = pd.read_csv("loan_data.csv")
+import os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+data = pd.read_csv(os.path.join(BASE_DIR, "loan_data.csv"))
 # Prepare training data
 X = data[["CIBIL_Score", "Loan_Amount"]]
 y = data["Eligible"]
